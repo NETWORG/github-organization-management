@@ -95,14 +95,6 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-// https://learn.microsoft.com/en-us/dotnet/core/compatibility/aspnet-core/8.0/forwarded-headers-unknown-proxies
-app.UseForwardedHeaders(new ForwardedHeadersOptions()
-{
-    KnownNetworks = { },
-    KnownProxies = { },
-    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
-});
-
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
